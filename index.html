@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>index</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<style type="text/css">
+		  .hidden {
+        display: none;
+      }
+		.col-md-5 {
+  margin: 0;
+  padding: 0;
+
+  background-image: url('pngegg.png');
+  opacity: 0.5;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+		.glassmorphism {
+  display: inline-block;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+}
+
+
+
+.glassmorphism.white {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+}
+.glassmorphism h1 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.glassmorphism p {
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+	</style>
+</head>
+<body >
+  <nav style="background: rgb(0,36,32);
+background: linear-gradient(90deg, rgba(0,36,32,1) 0%, rgba(9,113,121,1) 84%, rgba(8,97,92,1) 100%, rgba(67,149,137,1) 100%);" class="navbar navbar-expand-lg navbar-light ">
+    <div class="container-fluid">
+    	<i class="bi bi-camera-fill"></i>
+      <a class="navbar-brand text-white fs-3" href="#">Camera Connect</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto" >
+          <li class="nav-item">
+            <a class="nav-link text-white fs-3"  style="text-decoration: underline;" aria-current="page" href="https://cam.start.canon/en/C002/manual/html/UG-08_Wi-Fi_0090.html">Start Bluetooth?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fs-3" style="text-decoration: underline;"   href="https://cam.start.canon/en/C002/manual/html/UG-04_AF-Drive_0060.html">Set Camera?</a>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+<div style="height: 100vh; width: 100%; background: rgb(145,223,200);
+background: linear-gradient(90deg, rgba(145,223,200,1) 0%, rgba(173,227,224,1) 12%, rgba(111,232,204,1) 48%, rgba(67,149,137,1) 100%);">
+<div style="padding-top: 4%;">
+<div class="row">
+	<div class="col-md-1">
+		
+	</div>
+	<div class="col-md-6">
+		<div class="glassmorphism white">
+  <h1 style=" color: darkblue;">Camera Connect To Download Pics</h1>
+   ->
+            <a class="btn btn-danger text-white " 
+              href="https://cam.start.canon/en/C002/manual/html/UG-08_Wi-Fi_0090.html"
+              >Start the Bluetooth remote pair process</a
+            >
+            on your camera.
+         <br><br>
+          ->
+            <a class="btn btn-warning text-white "
+              href="https://cam.start.canon/en/C002/manual/html/UG-04_AF-Drive_0060.html"
+              >Set your camera</a
+            >
+            to the "Self-timer: 10 sec/remote control" drive mode.
+          <br><br>
+          ->
+            <a  class="btn btn-info text-white " href="https://cam.start.canon/en/C002/manual/html/UG-03_CustomShooting_0060.html">Set your camera</a>
+            to the "Bulb" exposure mode.
+        
+         <br>  <br><br>
+            Press <button class="bg-dark text-white" id="connectBtn">Connect</button> and choose your
+            camera among the shown devices.
+          <br><br>
+        <span class="bg-indigo">Note:</span>
+        <p class="text-danger">
+          Occasionally you might get pairing issues or reconnection issues, e.g.
+          after camera got asleep.
+          When that happens, I found it helpful to "Delete connection
+          information" on the camera, restart it and go through the pairing
+          process again.
+        </p>
+  
+</div>
+		
+         
+      </div>
+     
+      <div class="col-md-5">
+      	
+      </div>
+
+	</div>
+
+	
+</div>
+</div>
+	
+ <div id="shootGroup" class="hidden">
+        <form class="pure-form pure-form-aligned">
+          <fieldset>
+            <legend>Intervalometer</legend>
+            <div class="pure-control-group">
+              <label for="numberInput">Number of shots</label>
+              <input
+                type="number"
+                id="numberInput"
+                min="1"
+                value="1"
+                pattern="[0-9]+"
+              />
+            </div>
+            <div class="pure-control-group">
+              <label for="exposureInput">Exposure time (seconds)</label>
+              <input type="number" id="exposureInput" min="1" value="1" />
+            </div>
+            <div class="pure-control-group">
+              <label for="delayInput">Delay between shots (seconds)</label>
+              <input type="number" id="delayInput" min="1" value="1" />
+            </div>
+            <div class="pure-controls">
+              <button id="shootBtn" type="button">Start</button><br />
+              <progress
+                id="progressBar"
+                value="0"
+                style="visibility: hidden"
+              ></progress>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </main>
+    <script src="index.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>
